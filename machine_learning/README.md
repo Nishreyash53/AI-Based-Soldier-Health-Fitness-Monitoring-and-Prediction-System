@@ -1,112 +1,154 @@
-
 # 🤖 Machine Learning Module
 
-## AI-Based Soldier Health Fitness Monitoring and Prediction System
+# AI-Based Soldier Health Fitness Monitoring and Prediction System
 
-This module contains the complete Machine Learning pipeline used to predict a soldier's physical fitness class based on health and fitness parameters.
+This module contains the complete Machine Learning pipeline used to predict a soldier's physical fitness category (A, B, C, D) using health and fitness parameters.
 
 ---
 
 # 🎯 Objective
 
-To develop an AI-powered fitness prediction model that classifies soldiers into fitness categories (A, B, C, D) using machine learning techniques.
+To develop an AI-powered prediction system that classifies soldiers into different fitness grades based on their physical and health-related attributes using Machine Learning.
 
 ---
 
-# 📂 Files
+# 📂 Project Files
 
 | File | Description |
 |------|-------------|
-| dataset.ipynb | Complete Jupyter Notebook containing preprocessing, EDA, model training and evaluation |
-| soldier_fitness_xgboost.pkl | Final trained XGBoost model |
-| preprocessor.pkl | Saved preprocessing pipeline |
-| class_encoder.pkl | Label Encoder for target classes |
+| dataset.ipynb | Complete ML notebook (EDA, preprocessing, feature engineering, training & evaluation) |
+| soldier_fitness_xgboost_final.pkl | Final trained XGBoost model |
+| preprocessor_final.pkl | Data preprocessing pipeline |
+| class_encoder_final.pkl | Label encoder for target classes |
+| gender_encoder_final.pkl | Gender label encoder |
+| confusion_matrix.png | Confusion Matrix |
+| feature_importance.png | XGBoost Feature Importance |
+| roc_curve.png | Multi-Class ROC Curve |
+| model_performance.csv | Accuracy, Precision, Recall & F1 Score |
+| final_model_comparison.csv | Comparison of all trained models |
 
 ---
 
 # 📊 Dataset
 
-The model is trained using the **Body Performance Dataset**.
+**Dataset Used:** Body Performance Dataset
 
-Features used:
+### Features
 
 - Age
 - Gender
-- Height
-- Weight
-- Body Fat Percentage
+- Height (cm)
+- Weight (kg)
+- Body Fat (%)
 - Systolic Blood Pressure
 - Diastolic Blood Pressure
 - Grip Force
 - Sit and Bend Forward
-- Sit Ups Count
+- Sit-ups Count
 - Broad Jump
-- Blood Pressure Category
 
-Target Variable
+### Engineered Features
 
-- Fitness Class (A, B, C, D)
+- BMI
+- Pulse Pressure
+- Strength Index
+- Jump Power
+- Core Strength
+- Flexibility Index
+
+---
+
+# 🎯 Target
+
+Fitness Class
+
+- A
+- B
+- C
+- D
 
 ---
 
 # 🛠 Machine Learning Workflow
 
 - Data Cleaning
-- Missing Value Handling
+- Missing Value Checking
+- Duplicate Removal
+- Exploratory Data Analysis (EDA)
 - Feature Engineering
+- Correlation Analysis
+- Feature Importance
+- SHAP Explainability
 - Label Encoding
-- Feature Scaling
+- Data Scaling
 - Train-Test Split
 - Model Training
 - Hyperparameter Tuning
 - Model Evaluation
-- Model Serialization
+- Model Saving
 
 ---
 
 # 🤖 Models Evaluated
 
-- Decision Tree
 - Logistic Regression
-- K-Nearest Neighbors (KNN)
-- Support Vector Machine (SVM)
 - Random Forest
-- XGBoost (Best Model)
+- LightGBM
+- CatBoost
+- Stacking Ensemble
+- XGBoost (Baseline)
+- Tuned XGBoost
+- Feature Engineered XGBoost ✅
 
 ---
 
-# 🏆 Best Model
+# 🏆 Final Model
 
-Model
+**Feature Engineered XGBoost**
 
-XGBoost Classifier
+### Performance
 
-Accuracy
-
-75.52%
-
-The XGBoost model achieved the highest accuracy and was selected as the final prediction model.
+| Metric | Score |
+|---------|-------|
+| Accuracy | **76.56%** |
+| Precision | **76.64%** |
+| Recall | **76.26%** |
+| F1 Score | **76.18%** |
 
 ---
 
-# 📈 Evaluation Metrics
+# 📈 Model Evaluation
 
-- Accuracy
-- Precision
-- Recall
-- F1 Score
+The project includes
+
 - Confusion Matrix
-- Feature Importance
+- Multi-Class ROC Curve
+- SHAP Feature Importance
+- XGBoost Feature Importance
+- Classification Report
+- Model Comparison
 
 ---
 
-# 📦 Saved Models
+# 🔥 Top Important Features
 
-The following files are used during deployment.
+- Grip Force
+- Jump Power
+- Core Strength
+- Flexibility Index
+- Sit and Bend Forward
+- Pulse Pressure
+- Broad Jump
+- Strength Index
 
-- soldier_fitness_xgboost.pkl
-- preprocessor.pkl
-- class_encoder.pkl
+---
+
+# 💾 Saved Models
+
+- soldier_fitness_xgboost_final.pkl
+- preprocessor_final.pkl
+- class_encoder_final.pkl
+- gender_encoder_final.pkl
 
 ---
 
@@ -117,6 +159,7 @@ The following files are used during deployment.
 - NumPy
 - Scikit-Learn
 - XGBoost
+- SHAP
 - Matplotlib
 - Seaborn
 - Joblib
@@ -124,13 +167,15 @@ The following files are used during deployment.
 
 ---
 
-# 🚀 Future Improvements
+# 🚀 Future Scope
 
 - Real-Time Soldier Health Monitoring
-- Streamlit Web Application
-- Fitness Recommendation System
-- Live Wearable Device Integration
-- AI-Based Readiness Prediction
+- Flask Web Application
+- Streamlit Dashboard
+- AI-Based Fitness Recommendation
+- Wearable Device Integration
+- Soldier Readiness Prediction
+- Live Health Analytics
 
 ---
 
@@ -140,6 +185,12 @@ The following files are used during deployment.
 
 B.Tech CSE (AI & ML)
 
-Machine Learning Module
+GLA University
 
-AI-Based Soldier Health Fitness Monitoring and Prediction System
+---
+
+# ⭐ Project Status
+
+**Completed**
+
+Final XGBoost Model Successfully Developed and Uploaded.
